@@ -1,0 +1,91 @@
+.monthview-primary-with-event{
+    background-color:hsl(268, 100%, 60%);
+}
+.ng-star-inserted{
+    background-color: #d41148;;
+}
+
+#one{
+   
+    border-radius:100%;
+    width: 50px;
+    margin:auto;
+    height: 50px;
+    text-align:center;
+    box-shadow: 2px 3px #d8b9fc;
+    background-color:hsl(268, 100%, 60%);
+    background-image: linear-gradient(to right, hsl(268, 100%, 60%), hsl(270, 21%, 93%));
+}
+#two{
+   
+    border-radius:100%;
+    width: 50px;
+    margin:auto;
+    height: 50px;
+    text-align:center;
+    box-shadow: 1px 2px #a0c7db;
+    background-color:#41b0e7;
+    background-image: linear-gradient(to right, #41b0e7, hsl(270, 21%, 93%));
+}
+#three{
+   
+    border-radius:100%;
+    width: 50px;
+    margin:auto;
+    height: 50px;
+    text-align:center;
+    box-shadow: 1px 2px #dba5db;
+    background-color:#e23ae2;
+    background-image: linear-gradient(to right, #e23ae2, hsl(270, 21%, 93%));
+}
+p{
+    text-align: center;
+    padding-top: 35%;
+    color: white;
+}
+#p{
+   
+    border:0px solid black;
+    width: 30px;
+    margin:auto;
+    height: 10px;
+    text-align:center;
+    box-shadow: 2px 3px #d8b9fc;
+    background-color:#f4862c;
+ 
+
+}
+#lop{
+   
+    border:0px solid black;
+    width: 30px;
+    margin:auto;
+    height: 10px;
+    text-align:center;
+    box-shadow: 2px 3px #d8b9fc;
+    background-color:#d41148;
+  
+}
+#l{
+   
+    border:0px solid black;
+    width: 30px;
+    margin:auto;
+    height: 10px;
+    text-align:center;
+    box-shadow: 2px 3px #d8b9fc;
+    background-color:#6f2277;
+    
+}
+#w{
+   
+    border:0px solid black;
+    width: 30px;
+    margin:auto;
+    height: 10px;
+    text-align:center;
+    box-shadow: 2px 3px #d8b9fc;
+    background-color:#3a87ad;
+     
+   
+}

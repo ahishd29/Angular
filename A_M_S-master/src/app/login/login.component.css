@@ -1,0 +1,23 @@
+#form{
+    margin: 12% 0% 0% 5% ;
+    width: 25%;
+    padding: 20px 40px 50px 50px;
+    background-color:rgb(250, 219, 219);
+    position: fixed;
+    border-radius: 10px;
+    border: 1px solid  rgb(105, 150, 247);
+    box-shadow: 8px 8px 6px 8px grey;
+
+}
+
+#login{
+    margin:10% 10% 0% 30%;
+}
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 1800px;
+   width: 350px;
+  }
+  #button{
+      margin-top: -120px ;
+  }
+  

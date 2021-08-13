@@ -1,0 +1,166 @@
+<mat-card style="height: 550px;background-color: #f0f5f5">
+    <div class="row">
+        
+  
+    <div class="col-md-5">
+        <mat-card>
+        <h4>{{viewTitle}}</h4>
+        <table style="margin: left;">
+       <tr><td style="color: black"><div id="lop"></div></td>
+       <td style="color: black;size:30px;">&nbsp;Absent&nbsp;&nbsp;&nbsp;</td>
+     
+
+      <td style="color: black"><div id="l"></div></td>
+       <td style="color: black;size:30px;">&nbsp;Half Day Present&nbsp;&nbsp;&nbsp;</td>
+         <td><div id="w"></div></td>
+        <td style="color: black;size:30px;">&nbsp;Holiday&nbsp;&nbsp;&nbsp;</td>
+       </tr><br>
+        </table>
+        <div style="background-color: white;">
+        <calendar 
+              [autoSelect]="true"
+              [eventSource]="eventSource"
+              [calendarMode]="calendar.mode"
+              [queryMode]="calendar.queryMode"
+              [currentDate]="calendar.currentDate"
+              (onCurrentDateChanged)="onCurrentDateChanged($event)"
+              (onRangeChanged)="onRangeChanged($event)"
+              (onTitleChanged)="onViewTitleChanged($event)"
+              (onTimeSelected)="onTimeSelected($event)"
+              (onEventSelected)="onEventSelected($event)"
+              [markDisabled]="markDisabled"
+    ></calendar>
+ </div>
+</mat-card>
+ </div>
+
+
+<div class="col-md-7" >
+
+    
+<mat-card>
+<div class=row>
+ <div class="col-md-6">   <mat-card-title style='color:cornflowerblue;margin:auto;'>Regularization Form</mat-card-title>
+  </div>
+  <div class="col-md-1"></div> 
+  <div class="col-md-5" *ngIf="msg">  
+  <mat-card-title style="border-radius:4%;padding:5%;color:white;font-size:15px;background-color: rgb(88, 219, 88);">Regularization Apply Success!!</mat-card-title></div>
+</div><br>
+    <!-- <div style="padding-left: 80%;">
+      
+      <button mat-raised-button style="color: blue;text-decoration: underline;" [routerLink]="['/Regularization/Status']" matBadge={{lengths}}>View Status
+      <mat-icon>open_in_new</mat-icon></button></div> -->
+
+    <br/>
+  
+    <mat-card style='margin-right:200px;float:right;width:200px;'>
+        <mat-label style='color:cadetblue;margin:auto;' >LOP Dates</mat-label>
+        <br/><br/>
+        <!-- <div *ngFor='let ex of lopdates'>
+        <mat-label>{{ex}}</mat-label><br/>
+        </div> -->
+        <mat-chip-list >
+            <mat-chip
+            *ngFor='let ex of lopdates'
+               [selectable]="selectable"
+              [removable]="removable"
+              (removed)="removeDate(ex)" >
+              {{ex}}
+              <mat-icon matChipRemove>cancel</mat-icon>
+            </mat-chip>
+        </mat-chip-list>
+    </mat-card>
+   
+  <!-- <mat-form-field appearance="fill" appearance="outline">
+    <mat-label>Choose a from date</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="dob" (ngModelChange)="ageCalculator()" >
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field><br> -->
+  <!-- <mat-form-field appearance="fill" appearance="outline">
+    <mat-label>Choose a to date</mat-label>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="dob" (ngModelChange)="ageCalculator()" >
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field><br> -->
+ 
+ <mat-form-field class="" appearance="outline" *ngIf="lopdates.length==1" >
+  <mat-label>From Time(HH:MM)</mat-label>
+  <input matInput placeholder="Enter the from time" [(ngModel)]='fromTime'>
+</mat-form-field><br>
+
+<mat-form-field class="" appearance="outline"*ngIf="lopdates.length==1">
+    <mat-label>To Time(HH:MM)</mat-label>
+    <input matInput placeholder="Enter the from time" [(ngModel)]='toTime' >
+  </mat-form-field><br>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Attendance Type</mat-label>
+    <mat-select [(ngModel)]='attendanceType'>
+      <mat-option value="On Duty">On Duty</mat-option>
+      <mat-option value="Missed Login">Missed Log In</mat-option>
+      <mat-option value="Missed Logout"> Missed Log Out</mat-option>
+      <mat-option value="Early Logout">Early Logout Permission</mat-option>
+      <mat-option value="Late Login">Late Login Permission</mat-option>
+      <mat-option value="Corporate Timeout">Corporate Time Out</mat-option>
+    </mat-select>
+  </mat-form-field><br>
+
+  <mat-form-field class="" appearance="outline">
+    <mat-label>Reason</mat-label>
+    <textarea matInput placeholder="Reason" [(ngModel)]='reason'></textarea>
+  </mat-form-field>
+  
+  
+ <div id="apply"><br> 
+ <button mat-raised-button color="primary" style="padding-left:10px;padding-right: 10px;" (click)='applyRequest()'>Apply</button>
+ </div>
+ </mat-card>
+
+</div>
+
+<div class="col-md-7" *ngIf=false>
+    <mat-card>
+      <input type="button" value="hhhhh"/>
+        <mat-form-field appearance="outline">
+            <mat-label>Attendance Type</mat-label>
+            <mat-select [(ngModel)]='attendanceType'>
+              <mat-option  value="On Duty">On Duty</mat-option>
+              <mat-option value="missedlogin">Missed Log In</mat-option>
+              <mat-option value="missedlogout"> Missed Log Out</mat-option>
+              <mat-option value="earlylogout">Early Logout Permission</mat-option>
+              <mat-option value="latelogin">Late Login Permission</mat-option>
+              <mat-option value="timeout">Corporate Time Out</mat-option>
+            </mat-select>
+          </mat-form-field><br>
+      <!-- <mat-form-field appearance="fill" appearance="outline">
+        <mat-label>Choose a from date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="dob" (ngModelChange)="ageCalculator()" >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field><br> -->
+      <!-- <mat-form-field appearance="fill" appearance="outline">
+        <mat-label>Choose a to date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="dob" (ngModelChange)="ageCalculator()" >
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field><br> -->
+     
+      <mat-form-field id='me' appearance="outline" width='300px' height='100px'>
+        <mat-label>Reason</mat-label>
+        <textarea matInput placeholder="Reason" [(ngModel)]='reason'></textarea>
+      </mat-form-field>
+       
+      <div id="apply"><br>
+      <button mat-raised-button color="primary" style="padding-left:10px;padding-right: 10px;" (click)="applyRequest()">Apply</button>
+      
+    </div>
+      <br/>
+    
+        
+     
+      </mat-card>
+    </div>
+ </div>
+
+ </mat-card>    

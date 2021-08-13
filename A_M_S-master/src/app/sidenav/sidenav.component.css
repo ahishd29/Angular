@@ -1,0 +1,10 @@
+#sidenav{
+margin: auto;
+padding-top: 5px;
+width: 70%;
+  }
+  button{
+      margin: auto;
+      background-color: #d9f8f8;
+      background-image: linear-gradient(to right, #d9f8f8, hsl(270, 21%, 93%));
+  }

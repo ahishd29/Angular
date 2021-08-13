@@ -1,0 +1,36 @@
+
+        <mat-card style="width: 80%;margin: auto;background-color: honeydew;"><br>
+       
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>FromTime</th>
+                <th>ToTime</th>
+                <th>AttendanceType</th>
+                <th>Reason</th>
+                <th>Status</th>
+            </tr> 
+            
+            <tr *ngFor='let data of reqData'>
+                <td *ngIf='data.status=="Pending"'>{{data.pin}}</td>
+                <td *ngIf='data.status=="Pending"'>{{data.requestDate.slice(0,10)}}</td>
+                <td *ngIf='data.status=="Pending"'>{{data.fromTime.slice(0,5)}}</td>
+                <td *ngIf='data.status=="Pending"'>{{data.toTime.slice(0,5)}}</td>
+                <td *ngIf='data.status=="Pending"'>{{data.attendanceType}}</td>
+                <td *ngIf='data.status=="Pending"'>{{data.reason}}</td>
+                <td *ngIf='data.status=="Pending"'>
+               <div class="row">
+                    <button mat-raised-button style="color:green" (click)="approve(data.pin,data.requestDate.slice(0,10))">
+                        <mat-icon>thumb_up_alt</mat-icon></button>
+                    <button mat-raised-button style="color:red" (click)="reject(data.pin,data.requestDate.slice(0,10))">
+                        <mat-icon>thumb_down_alt</mat-icon></button>
+               </div>
+            </td>
+
+            </tr>
+            </tbody> 
+            </table>
+             
+            </mat-card>

@@ -1,0 +1,41 @@
+<mat-tab-group>
+    <mat-tab label="Attendance"><br>
+        <tr>
+        <button mat-raised-button color="primary" [routerLink]="['/Attendance']"><mat-icon>home</mat-icon></button>
+        <button mat-flat-button color="primary" [routerLink]="['/Attendance-Details']">Attendance Details</button>
+        <button mat-raised-button style="background-color:'#d1e0e0;'" [routerLink]="['/Regularization']">Regularization</button>
+        <button mat-raised-button color="primary" [routerLink]="['/Regularization/Status']">Regularization Status</button>
+        
+      </tr>
+        <mat-card style="background-color: #d1e0e0;">
+            
+        <app-regularization-cal></app-regularization-cal>
+        </mat-card>
+       
+            
+           
+    </mat-tab>
+  
+  
+  
+  
+    <mat-tab label="MyTime">
+  
+      <!-- <mat-grid-list cols="4" rowHeight="100px">
+        <mat-grid-tile [colspan]="1" [rowspan]="3" style="background-color:#ccccff">
+          <app-sidenav></app-sidenav>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="3" [rowspan]="6" style="background-color:#ccffff">
+         
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="3" style="background-color:#ccccff">
+            <app-donut></app-donut>
+        </mat-grid-tile>
+      </mat-grid-list> -->
+
+
+ 
+  
+    </mat-tab>
+  
+  </mat-tab-group>

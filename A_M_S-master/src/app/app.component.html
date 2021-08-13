@@ -1,0 +1,222 @@
+<!-- <p>
+    <mat-toolbar color="accent">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Angular Application</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+
+
+
+
+    </mat-toolbar>
+
+  </p>
+
+  <div class="row">
+    <div class="col-md-1"></div>
+  <div class="col-md-3 cards">
+    <mat-card>
+      <p id="img">
+      <img src="https://i.pinimg.com/originals/99/13/1d/99131d83e4933eafc477008a7b82e89c.jpg" alt="Avatar"><br><br>
+     </p>
+
+      <p id="text" style="text-align:center;"><strong>Hi,Gangu</strong></p>
+      <p id="text" style="text-align:center;">Baby@gmail.com</p>
+      <p id="text" style="text-align:center;">8745632100</p>
+
+  
+    </mat-card><br><br>
+
+  <mat-card >
+    <p id="text" style="text-align:center;"><strong>Student Performance</strong></p>
+<div class="row">
+
+  <div class="col-md-2"></div>
+  <div class="col-md-10">
+ 
+  <circle-progress
+    [percent]="95"
+    [radius]="100"
+    [outerStrokeWidth]="16"
+    [innerStrokeWidth]="8"
+    [outerStrokeColor]="'#ff3377'"
+    [innerStrokeColor]="'#C7E596'"
+    [animation]="true"
+    [animationDuration]="300">
+</circle-progress>
+<div class="col-md-1"></div>
+</div>
+</div>
+
+  </mat-card>
+  </div>
+  <mat-card class="col-md-7 card"> 
+   <h1>Student Mark Sheet</h1>
+   <div class="row">
+   <div class="col-md-3">
+    <circle-progress
+    [percent]="95"
+    [radius]="50"
+    [outerStrokeWidth]="8"
+    [innerStrokeWidth]="4"
+    [outerStrokeColor]="'#4ddbff'"
+    [innerStrokeColor]="'#C7E596'"
+    [animation]="true"
+    [animationDuration]="300">
+</circle-progress>
+   </div>  
+
+   <div class="col-md-3">
+    <circle-progress
+    [percent]="95"
+    [radius]="50"
+    [outerStrokeWidth]="8"
+    [innerStrokeWidth]="4"
+    [outerStrokeColor]="'#4ddbff'"
+    [innerStrokeColor]="'#C7E596'"
+    [animation]="true"
+    [animationDuration]="300">
+</circle-progress>
+  </div>
+
+  <div class="col-md-3">
+    <circle-progress
+    [percent]="95"
+    [radius]="50"
+    [outerStrokeWidth]="8"
+    [innerStrokeWidth]="4"
+    [outerStrokeColor]="'#4ddbff'"
+    [innerStrokeColor]="'#C7E596'"
+    [animation]="true"
+    [animationDuration]="300">
+</circle-progress>
+  </div>
+
+  <div class="col-md-3">
+    <circle-progress
+    [percent]="95"
+    [radius]="50"
+    [outerStrokeWidth]="8"
+    [innerStrokeWidth]="4"
+    [outerStrokeColor]="'#4ddbff'"
+    [innerStrokeColor]="'#C7E596'"
+    [animation]="true"
+    [animationDuration]="300">
+</circle-progress>
+  </div>
+   </div>
+
+
+        <mat-divider></mat-divider><br>
+
+<div id="contentToConvert">
+<mat-card class="card2" > 
+<div class="row">
+  <div class="col-md-6">      
+<h4 style="color:blue">Mark Sheet</h4>
+       <p>Name: Student Name</p>
+       <p>Email: Email@gmail.com</p>
+       <p>Phone Number: 9874563210</p> -->
+      <!-- <table class="table">
+       <thead><tr><th>Subjects</th><th>Marks</th></tr></thead>
+       <tr><td>{{S_Maths}}</td><td>90</td></tr>
+       <tr><td>{{S_Sci}}</td><td>90</td></tr>  
+       <tr><td>{{S_CS}}</td><td>90</td></tr>
+       <tr><td>{{S_SS}}</td><td>85</td></tr>        
+       </table>
+   </div> 
+        
+<div class="col-md-6">
+  <br><br><br><br>
+        <div class="chart-wrapper">
+          <canvas baseChart 
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType">
+        </canvas>
+      </div>
+</div>
+</div>
+    </mat-card><br>
+ </div>
+
+        <div class="example-button-row">
+          <button mat-raised-button color="primary"  >Download <mat-icon matSuffix>download_for_offline</mat-icon></button>
+          <button mat-raised-button color="warn" >Cancel</button>
+        </div>
+        
+<br>
+<mat-divider></mat-divider><br>
+<mat-card>
+<table class="table">
+<thead><tr><th>ID</th><th>Email</th><th>First Name</th><th>Last Name</th></tr></thead>
+<tr *ngFor="let a of products.data">
+<td>{{a.id}}</td><td>{{a.email}}</td><td>{{a.first_name}}</td><td>{{a.last_name}}</td>
+</tr><br>
+</table>
+</mat-card>
+<br>
+
+         <div class="row">
+<form id="myform">
+        <mat-form-field appearance="legacy" class="col-md-6">
+            <mat-label>Id</mat-label>
+            <input matInput placeholder="" [(ngModel)]="id">
+            <mat-hint></mat-hint>
+
+
+        </mat-form-field>
+        <mat-form-field appearance="legacy" class="col-md-6">
+          <mat-label>Id</mat-label>
+          <input matInput placeholder="" [(ngModel)]="id">
+          <mat-hint></mat-hint>
+
+
+      </mat-form-field>
+      <mat-form-field appearance="legacy" class="col-md-6">
+        <mat-label>Age</mat-label>
+        <input matInput placeholder="" [(ngModel)]="id">
+        <mat-hint></mat-hint>
+    </mat-form-field>
+
+    <button mat-raised-button color="warn" (click)="buttonClicked()">create</button>
+
+</form>
+
+        </div>
+
+      <mat-card>
+          <table class="table">
+          <thead><tr><th>ID</th><th>Name</th><th>Age</th></tr></thead>
+          <tr  *ngFor="let row of rows">
+          <td>{{row.id}}</td><td>{{row.name}}</td><td>{{row.age}}</td>
+          </tr><br>
+          </table>
+      </mat-card>
+
+ 
+
+        
+
+</mat-card>
+</div><br> 
+
+
+
+<!- ---------------------Assignment1----------------------- ---- --- --> 
+
+<router-outlet></router-outlet>
+
+
+
+ 

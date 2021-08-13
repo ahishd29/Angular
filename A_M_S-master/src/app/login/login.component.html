@@ -1,0 +1,46 @@
+<div>
+  
+ <mat-card style="padding-left: 60%;">
+  <div id="form" >
+    <h2 style="margin-left:85px;color:rgb(2, 2, 100);">Login</h2>
+    <img style="margin-left:60px;margin-bottom: 20px;" src="assets/login.png" width="100px" height="100px">
+
+  <div class="example-container">
+      <!-- <mat-form-field appearance="fill" > -->
+        <!-- <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="email"  [(ngModel)]="name" style="padding-right:50%;" required> -->
+        <!-- <app-profile [nested]="name" ></app-profile> -->
+        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field> -->
+      <mat-form-field appearance="fill" >
+        <mat-label> Username</mat-label>
+        <input matInput [(ngModel)]="name">
+        <button mat-icon-button matSuffix>
+          <mat-icon>person</mat-icon>
+          </button>
+      
+      </mat-form-field>
+      <!-- <input type="text" [(ngModel)]="name" class="form-control" id="uname" name="uname" 
+      placeholder="Enter UserName" /> -->
+    </div>
+    
+    <div class="example-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field><br>
+
+      <button mat-raised-button color="primary"  id="login" (click)="check();">Login</button>
+      <!-- <button mat-stroked-button color="warn" [routerLink]="'form'">Register</button> -->
+      <!-- <ng-http-loader></ng-http-loader> -->
+      
+    </div>  
+    </div>
+    
+    </mat-card>
+
+    </div>
+   

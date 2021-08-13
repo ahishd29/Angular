@@ -1,0 +1,77 @@
+<!-- <ejs-calendar id=calendar [value]='value' [min]='minDate' [max]='maxDate'></ejs-calendar> -->
+
+<div class="row">
+<div class="col-md-5">
+    <mat-card style="background-color: #f0f5f5;height:100%;">
+       <!-- <h4 style="color: black;font-weight: none;">Attendance Details</h4>
+        <table class="table">
+            <tr>
+            <td></td>
+            <td style="color:hsl(268, 100%, 60%);text-align: center ;">Present</td>
+            <td style="color: #41b0e7;text-align: center ;">Leave</td>
+            <td style="color:#e23ae2;text-align: center ;">LOP</td>  
+            </tr>
+            <tr>
+                <td style="color:rgb(70, 68, 68);font-weight: none;">Apl</td>
+                <td><div id="one"><p>20</p></div></td>
+                <td><div id="two"><p>0</p></div></td>
+                <td><div id="three"><p>2</p></div></td>
+             </tr> 
+             <tr>
+                <td style="color:rgb(70, 68, 68);font-weight: none;">Mar</td>
+                <td><div id="one"><p>20</p></div></td>
+                <td><div id="two"><p>1</p></div></td>
+                <td><div id="three"><p>2</p></div></td>
+               
+             </tr>
+             <tr>
+                <td style="color:rgb(70, 68, 68);font-weight: none;">Feb</td>
+                <td><div id="one"><p>20</p></div></td>
+                <td><div id="two"><p>0</p></div></td>
+                <td><div id="three"><p>3</p></div></td>
+                
+             </tr>
+             <tr>
+                <td style="color:rgb(70, 68, 68);font-weight: none;">Jan</td>
+                <td><div id="one"><p>20</p></div></td>
+                <td><div id="two"><p>3</p></div></td>
+                <td><div id="three"><p>0</p></div></td>
+                
+             </tr>     
+        </table> -->
+
+        <app-barchart></app-barchart>
+    </mat-card> 
+    
+
+ 
+</div>
+<div class="col-md-7" >
+<mat-card style="height: 450px;background-color: #f0f5f5">
+   <h4>{{viewTitle}}</h4>
+   <table style="margin: auto;">
+   <tr><td><div id="p"></div></td>
+      <td style="color: black">&nbsp;Present&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="color: black"><div id="lop"></div></td>
+      <td style="color: black">&nbsp;LOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td style="color: black"><div id="l"></div></td>
+      <td style="color: black">&nbsp;Leave&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+      <td><div id="w"></div></td>
+      <td style="color: black">&nbsp;Weekly-Off</td></tr>
+   </table><br>
+   <div style="background-color: white;">
+   <calendar [eventSource]="eventSource"
+             [calendarMode]="calendar.mode"
+             [queryMode]="calendar.queryMode"
+             [currentDate]="calendar.currentDate"
+             (onCurrentDateChanged)="onCurrentDateChanged($event)"
+             (onRangeChanged)="onRangeChanged($event)"
+             (onTitleChanged)="onViewTitleChanged($event)"
+             (onTimeSelected)="onTimeSelected($event)"
+             (onEventSelected)="onEventSelected($event)"   
+            [markDisabled]="markDisabled"
+   ></calendar>
+</div>
+</mat-card>    
+</div>
+</div>

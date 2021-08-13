@@ -1,0 +1,65 @@
+<mat-tab-group>
+    <mat-tab label="Attendance"><br>
+        <tr>
+        <button mat-raised-button color="primary" [routerLink]="['/Attendance']"><mat-icon>home</mat-icon></button>
+        <button mat-flat-button color="primary" [routerLink]="['/Attendance-Details']">Attendance Details</button>
+        <button mat-raised-button color="primary" [routerLink]="['/Regularization']">Regularization</button>
+        <button mat-raised-button style="background-color:'#d1e0e0;'" [routerLink]="['/Regularization/Status']">Regularization Status</button>
+          
+    </tr>
+        <mat-card style="background-color: #d1e0e0;">
+        
+        </mat-card><br><br>
+        <!-- <div style="padding-left:20px;padding-top:5px;">
+        <button mat-fab color="primary" aria-label="Example icon button with a delete icon" [routerLink]="['/Regularization']">
+            <mat-icon>arrow_back</mat-icon>
+          </button>
+          </div> -->
+          <div style="padding-left: 10%;size: 80px;color: grey;"><h3>Regularization Status</h3></div>
+        <mat-card style="width: 80%;margin: auto;background-color: honeydew;"><br>
+        <div></div>
+            <!-- <div class="row">
+            <div class="col-md-2"><mat-icon style="color:orange">pending</mat-icon>&nbsp;Pending</div>
+            <div class="col-md-2"><mat-icon style="color:red">thumb_down_alt</mat-icon>&nbsp;Rejected</div>
+            <div class="col-md-2"><mat-icon style="color:green">thumb_up_alt</mat-icon>&nbsp;Approved</div>
+            </div><br> -->
+
+        <table class="table">
+            <tbody>
+            <tr>
+                <th>Date</th>
+                <th>FromTime</th>
+                <th>ToTime</th>
+                <th>AttendanceType</th>
+                <th>Reason</th>
+                <th>Status</th>
+            </tr> 
+            
+            <tr *ngFor='let data of reqData'>
+                <td>{{data.requestDate.slice(0,10)}}</td>
+                <td>{{data.fromTime.slice(0,5)}}</td>
+                <td>{{data.toTime.slice(0,5)}}</td>
+                <td>{{data.attendanceType}}</td>
+                <td>{{data.reason}}</td>
+                <td *ngIf='data.status=="Pending"'>
+                    <div><mat-icon style="color:orange">pending</mat-icon>&nbsp;Pending</div>
+                </td>
+                <td *ngIf='data.status=="Approved"'>
+                <div ><mat-icon style="color:green">thumb_up_alt</mat-icon>&nbsp;Approved</div>
+                </td>
+                <td *ngIf='data.status=="Rejected"'>
+                    <div ><mat-icon style="color:red">thumb_down_alt</mat-icon>&nbsp;Rejected</div>
+                </td>
+
+            </tr>
+            </tbody> 
+
+                </table>
+             
+            </mat-card>
+    </mat-tab>
+
+    <mat-tab label="MyTime">
+    </mat-tab>
+  
+  </mat-tab-group>

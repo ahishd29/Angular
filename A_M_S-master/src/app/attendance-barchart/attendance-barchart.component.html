@@ -1,0 +1,104 @@
+<mat-card id="card1">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+        <label>From date :&nbsp;</label>
+        <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="fromdate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          
+          <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;To date :&nbsp;</label>
+            <mat-form-field appearance="outline">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker1" [(ngModel)]="todate">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+        </div>
+
+        <div class="col-md-3" id="button">
+              <button mat-raised-button color="primary" id="createReport" (click)="generatereport()">Generate Report</button>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button mat-raised-button color="warn" id="reset">Reset</button>
+        </div>
+    </div>
+
+</mat-card>
+
+<mat-card id="card2">
+    <div class="row">
+        <div class="col-md-10"></div>
+
+        
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style" *ngIf='format'>
+          <mat-button-toggle value="bold" (change)="showgraph()"><img src="https://img.icons8.com/plasticine/100/000000/graph.png" style="width: 30px;"/></mat-button-toggle>
+          <mat-button-toggle value="italic" (change)="showtable()"><img src="https://img.icons8.com/offices/30/000000/table-1.png"/></mat-button-toggle>
+        </mat-button-toggle-group>
+          
+    </div>
+    <div style="display: block;width: 50%;height: 50%;margin:auto" *ngIf="graph">
+        <canvas baseChart 
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType">
+        </canvas>
+      </div>
+    <!-- -------------------------------- -->
+
+    <div id="table" *ngIf="table">
+        <mat-form-field style="padding-left: 250px;">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+          </mat-form-field>
+          
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="margin:auto;width: 60%;height: 80%;">
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="attendanceDate">
+              <th mat-header-cell *matHeaderCellDef style='font-weight:bold;font-size:medium'> Attendance Date </th>
+              <td mat-cell *matCellDef="let element"> {{element.attendanceDate}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="inTime">
+              <th mat-header-cell *matHeaderCellDef style='font-weight:bold;font-size:medium'> LogIn Time </th>
+              <td mat-cell *matCellDef="let element"> {{element.inTime}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="outTime">
+              <th mat-header-cell *matHeaderCellDef style='font-weight:bold;font-size:medium'> LogOut Time </th>
+              <td mat-cell *matCellDef="let element"> {{element.outTime}} </td>
+            </ng-container>
+          
+            <!-- totalHours Column -->
+            <ng-container matColumnDef="totalBreak">
+              <th mat-header-cell *matHeaderCellDef style='font-weight:bold;font-size:medium'> Break Hours </th>
+              <td mat-cell *matCellDef="let element"> {{element.totalBreak}} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="totalHours">
+              <th mat-header-cell *matHeaderCellDef style='font-weight:bold;font-size:medium'> Working Hours </th>
+              <td mat-cell *matCellDef="let element"> {{element.totalHours}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          
+            <!-- Row shown when there is no matching data. -->
+            <!-- <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr> -->
+          </table>
+          
+      </div>
+</mat-card>

@@ -1,0 +1,38 @@
+﻿
+    @ViewData["title"];
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>WebApi,Mvc</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <p>Hii</p>
+    <h1>@DateTime.Now</h1>
+
+    <h1>Sum = @(3+5)</h1>
+
+    @{ 
+        int a = 1;
+        int b = 2;
+        int c = a + b;
+    }
+
+    <h2>@c</h2>
+
+    Email : ahishbiet@gmail.com
+    <br />
+    Twitter : @@ahishd29
+
+    <br />
+    <br />
+    <h3>
+        @ViewData["myProp"]
+    </h3>
+</body>
+</html>
